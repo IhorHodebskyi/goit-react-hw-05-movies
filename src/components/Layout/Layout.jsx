@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Header, Ul, Link, Container } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 const Layout = () => {
@@ -16,7 +17,9 @@ const Layout = () => {
         </nav>
       </Header>
       <main>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </main>
     </Container>
   );

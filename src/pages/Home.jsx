@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { getMovies } from 'service/API';
 import MovieList from '../components/MovieList/MovieList';
@@ -10,6 +10,7 @@ const Home = () => {
       try {
         const { results } = await getMovies();
         setMovies([...results]);
+        console.log(results);
       } catch (error) {
         console.log(error.message);
       }
@@ -22,7 +23,9 @@ const Home = () => {
       <div>
         <h1>Trending today</h1>
         <ul>{movies && <MovieList movies={movies} />}</ul>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );
