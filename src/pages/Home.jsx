@@ -10,7 +10,6 @@ const Home = () => {
       try {
         const { results } = await getMovies();
         setMovies([...results]);
-        console.log(results);
       } catch (error) {
         console.log(error.message);
       }

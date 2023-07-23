@@ -1,12 +1,18 @@
-const SearchMovieForm = ({ setSearchParams, searchValue, getSearchMovie }) => {
+const SearchMovieForm = ({
+  setSearchParams,
+  searchValue,
+  getSearchMovie,
+  firstRender,
+}) => {
   const handleChange = ({ target: { value } }) => {
     setSearchParams({ search: value });
+    firstRender.current = false;
   };
   const handleSubmit = event => {
     event.preventDefault();
     getSearchMovie(searchValue);
   };
-  console.log(searchValue);
+
   return (
     <form onSubmit={handleSubmit}>
       <input
