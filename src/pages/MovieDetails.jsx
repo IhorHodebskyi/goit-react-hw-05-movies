@@ -8,8 +8,7 @@ import MovieCard from 'components/MovieCard/MovieCard';
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
-  console.log(movie);
-
+ 
   useEffect(() => {
     const getMovieDay = async () => {
       try {
@@ -24,7 +23,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <MovieCard movie={movie} />{' '}
+      <MovieCard movie={movie} />
       <ul>
         <li>
           <Link to="cast">Cast</Link>
