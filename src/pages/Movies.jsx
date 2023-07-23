@@ -1,10 +1,10 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
-import { Outlet, useLocation, useSearchParams } from 'react-router-dom';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import SearchMovieForm from 'components/SearchMovieForm/SearchMovieForm';
 import { getMovieBySearch } from 'service/API';
 import MovieList from 'components/MovieList/MovieList';
 const Movies = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [movies, setMovies] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams({ search: '' });
   const searchValue = searchParams.get('search');
@@ -12,8 +12,6 @@ const Movies = () => {
   useEffect(() => {
     !searchValue && setSearchParams({});
   }, [searchValue, setSearchParams]);
-
-  console.log(location);
 
   useEffect(() => {
     firstRender.current && searchValue && getSearchMovie(searchValue);
