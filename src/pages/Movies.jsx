@@ -16,7 +16,7 @@ const Movies = () => {
   console.log(location);
 
   useEffect(() => {
-    firstRender && searchValue && getSearchMovie(searchValue);
+    firstRender.current && searchValue && getSearchMovie(searchValue);
   }, [searchValue]);
 
   const getSearchMovie = async query => {

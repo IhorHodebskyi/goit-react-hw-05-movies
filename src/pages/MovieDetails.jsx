@@ -33,11 +33,15 @@ const MovieDetails = () => {
       <MovieCard movie={movie} />
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" state={location}>
+            Cast
+          </Link>
         </li>
 
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" state={location}>
+            Reviews
+          </Link>
         </li>
       </ul>
       <Suspense>
