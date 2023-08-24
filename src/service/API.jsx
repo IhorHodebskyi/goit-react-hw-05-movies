@@ -1,7 +1,3 @@
-// curl --request GET \
-//  --url https://api.themoviedb.org/3/trending/all/day \
-//  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmYxM2Y0NDJhNjYxMmVhOTAzNDYxZTI4NTM2ZmRjYSIsInN1YiI6IjY0ODJjZGZlZDJiMjA5MDEyZGZjMTFlMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BbUd1JK1ao_4vmc9F5wazpT1PQliETdyQPeZPQ8YlqY' \
-//  --header 'accept: application/json'
 import axios from 'axios';
 
 const API_KEY = '5bf13f442a6612ea903461e28536fdca';
